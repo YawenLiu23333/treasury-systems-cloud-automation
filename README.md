@@ -12,45 +12,6 @@ A compact data pipeline that:
 3) **Loads** it into a SQL database (SQLite by default; switch to **Azure SQL** via `DATABASE_URL`)
 4) **Alerts** (optional) to a webhook (Power Automate/Logic Apps) on errors
 
-## Quick Start (Local)
-
-```bash
-python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-cp .env.example .env
-python main.py --symbols AAPL,NG,MSFT --days 60
-```
-
-This creates/updates a local SQLite DB at `./local.db` and prints a summary.
-
-## Environment Variables
-
-Create a `.env` (see `.env.example`):
-- `DATABASE_URL` – defaults to SQLite (`sqlite:///local.db`).  
-  - Example **Azure SQL**:  
-    `mssql+pyodbc://USER:PASSWORD@YOURSERVER.database.windows.net:1433/YOURDB?driver=ODBC+Driver+18+for+SQL+Server&Encrypt=yes&TrustServerCertificate=no`
-- `ALERT_WEBHOOK_URL` – (optional) HTTP endpoint for alerts (Power Automate/Logic Apps).
-- `ENV` – `local`/`dev`/`prod` (for logging tag).
-
-## Azure SQL (Swap in minutes)
-1. Create an Azure SQL Database + user.
-2. Ensure your local IP is allowed (or run from an Azure runner).
-3. Set `DATABASE_URL` to your Azure connection string (example above).
-4. Run the schema (optional; the app creates tables if missing):
-   ```bash
-   python -c "from src.load import create_schema; create_schema()"
-   ```
-
-## Power Automate / Logic Apps Alerts (Optional)
-See `power_automate/README.md` for creating an HTTP-triggered flow. Set `ALERT_WEBHOOK_URL` in `.env`.
-
-## Tests
-```bash
-pytest -q
-```
-
-## CI (GitHub Actions)
-- On push, CI installs deps and runs tests (`.github/workflows/ci.yml`).
 
 ## What This Demonstrates
 - Python data engineering (pandas, anomaly detection)
