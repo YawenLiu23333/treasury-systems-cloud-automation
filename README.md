@@ -1,3 +1,9 @@
+> **Why this project for National Grid (Treasury Systems):**
+> - Python + SQL + Azure-ready pipeline shows cloud-first engineering.
+> - Automation, anomaly detection, and alerting mirror optimization & controls.
+> - Clean tests + CI reflect production hygiene and auditability.
+
+
 # Treasury Systems – Cloud Automation Pipeline (Python + SQL + Azure-ready)
 
 A compact data pipeline that:
@@ -55,14 +61,3 @@ pytest -q
 
 ---
 
-## How to Publish on GitHub
-
-```bash
-git init
-git add .
-git commit -m "Initial commit: Cloud Automation pipeline (Python + SQL + Azure-ready)"
-# Create a new empty repo on GitHub named treasury-systems-cloud-automation
-git branch -M main
-git remote add origin https://github.com/<your-username>/treasury-systems-cloud-automation.git
-git push -u origin main
-```
