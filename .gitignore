@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.env
+*.sqlite
+*.db
+.pytest_cache/
+.coverage
+dist/
+build/
+
+# macOS / editors
+.DS_Store
+.vscode/
+.idea/
