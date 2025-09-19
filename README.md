@@ -22,3 +22,7 @@ A compact data pipeline that:
 
 ---
 
+
+## Run Screenshot
+
+![Run example](assets/run.png)
